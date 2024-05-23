@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 typedef struct _dano{
     char descricao[80];
@@ -16,6 +17,7 @@ typedef struct _personagem{
     int folego;
     int inventario[3];
     int vida;
+    int destreza;
     int carisma;
     int magia;
 } PERS;
@@ -42,8 +44,10 @@ int main()
     scanf("%d", &digito);
     if(digito == 1){
         PERS personagem = {0};
+        char nome[40];
         printf("Digite o nome do seu personagem: ");
-        scanf("%s", personagem.nome);
+        fgets(nome, 39, stdin);    //scanf("%s", personagem.nome);
+        strcpy(personagem.nome, nome);
         distribuir(pontos, &personagem);
         //personagem.forca = numaleatorio;
         printf("%s %d %d %d %d %d", personagem.nome, personagem.forca, personagem.defesa, personagem.magia, personagem.folego, personagem.carisma);
@@ -59,11 +63,13 @@ void distribuir(int pontos, PERS *personagem){
     char defesa[10] = "defesa";
     char magia[10] = "magia";
     char folego[10] = "folego";
+    char destreza[] = "destreza";
     char carisma[10] = "carisma";
     personagem->forca = facilita(forca, &pontos2, *personagem);
     personagem->defesa = facilita(defesa, &pontos2, *personagem);
     personagem->magia = facilita(magia, &pontos2, *personagem);
     personagem->folego = facilita(folego, &pontos2, *personagem);
+    personagem->destreza = facilita(destreza, &pontos2, *personagem);
     personagem->carisma = facilita(carisma, &pontos2, *personagem);
 
 
@@ -86,4 +92,6 @@ int facilita(char *hab, int *pontos, PERS personagem){
     }
     *pontos = *pontos - x;
     return x;
+
+
 }
