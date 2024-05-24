@@ -20,6 +20,7 @@ typedef struct _personagem{
     int destreza;
     int carisma;
     int magia;
+    int capitulo;
 } PERS;
 
 int facilita(char *hab, int *pontos, PERS personagem);
@@ -30,6 +31,7 @@ int main()
 {
     srand(time(NULL));
     FILE *inicio;
+    FILE *salvar;
     char inicio1[200];
     int digito;
     int pontos = 100;
@@ -45,13 +47,21 @@ int main()
     if(digito == 1){
         PERS personagem = {0};
         char nome[40];
+        salvar = fopen("salvar.bin", "a");
         printf("Digite o nome do seu personagem: ");
-        fgets(nome, 39, stdin);    //scanf("%s", personagem.nome);
-        strcpy(personagem.nome, nome);
+        scanf("%s", personagem.nome);
+        //strcpy(personagem.nome, nome);
         distribuir(pontos, &personagem);
         //personagem.forca = numaleatorio;
         printf("%s %d %d %d %d %d", personagem.nome, personagem.forca, personagem.defesa, personagem.magia, personagem.folego, personagem.carisma);
+        fwrite(&personagem, 1, sizeof(PERS), salvar);
+        fclose(salvar);
     }
+    salvar = fopen("salvar.bin", "r");
+    PERS save;
+    fread(&save, sizeof(PERS), 1, salvar);
+    //printf("%s", save2.nome);
+
     
     return 0;
 }
