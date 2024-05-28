@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#define cp personagem->capitulo
 
 typedef struct _dano{
     char descricao[80];
@@ -25,16 +26,19 @@ typedef struct _personagem{
 
 int facilita(char *hab, int *pontos, PERS personagem);
 void distribuir(int pontos, PERS *personagem);
+void limparTela();
+void historia(PERS *personagem);
+PERS pegarDig(int dig);
+void capitulo0(PERS *personagem);
+void status(PERS personagem); // printa os atributos do personagem
 
 
 int main()
 {
     srand(time(NULL));
     FILE *inicio;
-    FILE *salvar;
     char inicio1[200];
     int digito;
-    int pontos = 100;
     int numaleatorio;
     inicio = fopen("D:\\vscodeC\\proj\\jogo\\teste.txt", "r");
     while(!feof(inicio)){
@@ -42,25 +46,19 @@ int main()
         printf("%s", inicio1);
     }
     fclose(inicio);
-    
-    scanf("%d", &digito);
-    if(digito == 1){
-        PERS personagem = {0};
-        char nome[40];
-        salvar = fopen("salvar.bin", "a");
-        printf("Digite o nome do seu personagem: ");
-        scanf("%s", personagem.nome);
-        //strcpy(personagem.nome, nome);
-        distribuir(pontos, &personagem);
-        //personagem.forca = numaleatorio;
-        printf("%s %d %d %d %d %d", personagem.nome, personagem.forca, personagem.defesa, personagem.magia, personagem.folego, personagem.carisma);
-        fwrite(&personagem, 1, sizeof(PERS), salvar);
-        fclose(salvar);
+    while(1){
+        scanf("%d", &digito);
+        if(digito > 3 || digito < 1){
+            printf("Por favor, insira um digito valido");
+            continue;
+        }
+        else
+        break;
     }
-    salvar = fopen("salvar.bin", "r");
-    PERS save;
-    fread(&save, sizeof(PERS), 1, salvar);
-    //printf("%s", save2.nome);
+    PERS personagem;
+    personagem = pegarDig(digito); // Verifica o digito de entrada
+
+    printf("%s", personagem.nome);
 
     
     return 0;
@@ -69,12 +67,12 @@ int main()
 void distribuir(int pontos, PERS *personagem){
     printf("Voce tem %d pontos. Distribua-os da maneira que quiser\n", pontos);
     int pontos2 = pontos;
-    char forca[10] = "forca";
-    char defesa[10] = "defesa";
-    char magia[10] = "magia";
-    char folego[10] = "folego";
-    char destreza[] = "destreza";
-    char carisma[10] = "carisma";
+    char forca[6] = "forca";
+    char defesa[7] = "defesa";
+    char magia[6] = "magia";
+    char folego[7] = "folego";
+    char destreza[9] = "destreza";
+    char carisma[8] = "carisma";
     personagem->forca = facilita(forca, &pontos2, *personagem);
     personagem->defesa = facilita(defesa, &pontos2, *personagem);
     personagem->magia = facilita(magia, &pontos2, *personagem);
@@ -94,6 +92,7 @@ int facilita(char *hab, int *pontos, PERS personagem){
         printf("Pontos disponiveis %d\nAtribua os valores de %s a seguir: ", *pontos, hab);
         scanf("%d", &x);
         if(x > *pontos || x < 0){
+            limparTela();
             printf("Voce nao tem pontos suficientes\n");
             continue;
         }
@@ -104,4 +103,55 @@ int facilita(char *hab, int *pontos, PERS personagem){
     return x;
 
 
+}
+
+void limparTela()
+{
+     system("cls"); //Use este caso esteja rodando em windows
+    //system("clear"); //Use este caso esteja rodando em linux
+}
+
+PERS pegarDig(int dig){
+    if(dig == 1){
+        FILE *salvar;
+        int pontos = 30;
+        PERS personagem = {0};
+        salvar = fopen("salvar.bin", "w");
+        printf("Digite o nome do seu personagem: ");
+        scanf("%s", personagem.nome);
+        personagem.capitulo = 0;
+        distribuir(pontos, &personagem);
+        status(personagem);
+        fwrite(&personagem, 1, sizeof(PERS), salvar);
+        fclose(salvar);
+        return personagem;
+    }
+    else if(dig == 2){
+    FILE *salvar;
+    salvar = fopen("salvar.bin", "r");
+    PERS save;
+    fread(&save, sizeof(PERS), 1, salvar);
+    return save;
+    }
+    else if(dig == 3){
+        exit(1);
+    }
+}
+
+void status(PERS personagem){
+    printf("\n"); 
+    printf("%s voce tem os seguintes atributos:\nForca: %d\nDefesa: %d\nMagia: %d\nFolego: %d\nDestreza: %d\nCarisma: %d", personagem.nome, personagem.forca, personagem.defesa, personagem.magia, personagem.destreza, personagem.folego, personagem.carisma);
+    printf("\n");
+}
+
+
+void historia(PERS *personagem){
+    if(cp == 0){
+      capitulo0(&personagem);
+      status(*personagem);  
+    }
+}
+
+void capitulo0(PERS *personagem){
+    
 }
