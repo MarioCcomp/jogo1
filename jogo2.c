@@ -221,7 +221,14 @@ PERS pegarDig(int dig){
 }
 
 
-
+int func(char *txt, int i){
+    for(int j = i; txt[j] != ']'; j++){
+        if(txt[j + 1] == ']'){
+            i = j + 1;
+            return i;
+        }
+    }
+}
 
 int capitulo1(PERS *personagem){
     int vivo, teste = 0;
@@ -238,19 +245,29 @@ int capitulo1(PERS *personagem){
     strcpy(goblin.nome, "Goblin");
     FILE *cap;
     char txt[201];
-    cap = fopen("C:\\vscodeC\\proj\\jogo\\capitulo0.txt", "r");
+    cap = fopen("C:\\vscodeC\\proj\\jogo\\capitulo1.txt", "r");
     while(1){
         fgets(txt, 200, cap);
         for(int i = 0; txt[i] != '\0'; i++){
-            if(txt[i] == '+'){
-                teste = 1;
-                txt[i] = '\0';
-                printf("%s", txt);
-                break;
+            if(txt[i] == '\n'){
+            txt[i + 1] = '\0';
             }
         }
+        for(int i = 0; txt[i] != '\0'; i++){
+            if(txt[i] == '['){
+                printf("%s", personagem->nome);
+                i = func(txt, i);
+            }
+            else if(txt[i] == '+'){
+                teste = 1;
+                break;
+            }
+            else printf("%c", txt[i]);
+            
+        }
+
+
         if(teste) break;
-        else printf("%s", txt);
     }
     teste = 0;
       printf("\n");
@@ -304,6 +321,7 @@ int capitulo1(PERS *personagem){
       }
       else{
         printf("Digite uma opcao valida: ");
+        getchar();
         continue;
       }
       }
@@ -312,17 +330,25 @@ int capitulo1(PERS *personagem){
         while(1){
             fgets(txt, 200, cap);
             for(int i = 0; txt[i] != '\0'; i++){
-                if(txt[i] == '+'){
-                teste = 1;
-                txt[i] = '\0';
-                printf("%s", txt);
-                break;
-                }
-           }
-                if(teste) break;
-                else printf("%s", txt);
+                if(txt[i] == '\n'){
+                 txt[i + 1] = '\0';
+                 }
         }
-        printf("\n");
+            for(int i = 0; txt[i] != '\0'; i++){
+                if(txt[i] == '['){
+                printf("%s", personagem->nome);
+                 i = func(txt, i);
+            }
+            else if(txt[i] == '+'){
+                teste = 1;
+                break;
+            }
+            else printf("%c", txt[i]);
+            
+        }
+                if(teste) break;
+        }
+            printf("\n");
             printf("Escolha sua opcao: ");
             while(1){
             scanf("%c", &escolha);
@@ -354,6 +380,7 @@ int capitulo1(PERS *personagem){
             }
             else{
                 printf("Escolha uma opcao valida: ");
+                getchar();
                 continue;
             }
             }
@@ -370,22 +397,22 @@ int historia(PERS *personagem){
 
     if(cp == 1){
       capitulo1(personagem);
-      return 1;
+      return 0;
     }
     else if(cp == 2){
-        capitulo2(personagem);
+      //  capitulo2(personagem);
         return 1;
     }
     else if(cp == 3){
-        capitulo3(personagem);
+       // capitulo3(personagem);
         return 1;
     }
     else if(cp == 4){
-        capitulo4(personagem);
+       // capitulo4(personagem);
         return 1;
     }
     else if(cp == 5){
-        capitulo5(personagem);
+        //capitulo5(personagem);
         return 0;
     }
 }
@@ -427,4 +454,3 @@ int main()
     
     return 0;
 }
-
