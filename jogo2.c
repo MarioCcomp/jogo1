@@ -90,6 +90,7 @@ void jogadorAtaca(PERS *heroi, PERS *vilao)
         printf("\n");
     }
     scanf("%d", &ataqEscolhido);
+    getchar();
     atacar(heroi, vilao, heroi->ataques[ataqEscolhido-1]);
 }
 
@@ -149,6 +150,7 @@ int facilita(char *hab, int *pontos, PERS personagem){
     while(1){
         printf("Pontos disponiveis %d\nAtribua os valores de %s a seguir: ", *pontos, hab);
         scanf("%d", &x);
+        getchar();
         if(x > *pontos || x < 0){
             limparTela();
             printf("Voce nao tem pontos suficientes\n");
@@ -321,7 +323,6 @@ int capitulo1(PERS *personagem){
       }
       else{
         printf("Digite uma opcao valida: ");
-        getchar();
         continue;
       }
       }
@@ -380,7 +381,6 @@ int capitulo1(PERS *personagem){
             }
             else{
                 printf("Escolha uma opcao valida: ");
-                getchar();
                 continue;
             }
             }
@@ -444,7 +444,6 @@ int main()
     }
     PERS personagem;
     personagem = pegarDig(digito); // Verifica o digito de entrada
-    getchar();
     while(teste){
     teste = historia(&personagem);
     }
