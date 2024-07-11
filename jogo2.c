@@ -151,6 +151,7 @@ int facilita(char *hab, int *pontos, PERS personagem){
         printf("Pontos disponiveis %d\nAtribua os valores de %s a seguir: ", *pontos, hab);
         scanf("%d", &x);
         getchar();
+        limparTela();
         if(x > *pontos || x < 0){
             limparTela();
             printf("Voce nao tem pontos suficientes\n");
@@ -186,7 +187,7 @@ void distribuir(int pontos, PERS *personagem){
 
 void status2(PERS personagem){
     printf("\n"); 
-    printf("%s voce tem os seguintes atributos:\nForca: %d\nDefesa: %d\nMagia: %d\nFolego: %d\nDestreza: %d\nCarisma: %d\n", personagem.nome, personagem.forca, personagem.defesa, personagem.magia, personagem.folego, personagem.destreza, personagem.carisma);
+    printf("%s voce tem os seguintes atributos:\nForca: %d\nDefesa: %d\nMagia: %d\nFolego: %d\nDestreza: %d\nCarisma: %d\n\n", personagem.nome, personagem.forca, personagem.defesa, personagem.magia, personagem.folego, personagem.destreza, personagem.carisma);
 }
 
 PERS pegarDig(int dig){
@@ -203,7 +204,9 @@ PERS pegarDig(int dig){
         personagem.ataques[0] = ataq1;
         personagem.ataques[1] = ataq2;
         personagem.ataques[2] = ataq3;
+        limparTela();
         distribuir(pontos, &personagem);
+        limparTela();
         status2(personagem);
         personagem.capitulo = 1;
         fwrite(&personagem, 1, sizeof(PERS), salvar);
@@ -214,6 +217,7 @@ PERS pegarDig(int dig){
     FILE *salvar;
     salvar = fopen("salvar.bin", "r");
     PERS save;
+    status2(save);
     fread(&save, sizeof(PERS), 1, salvar);
     return save;
     }
@@ -278,9 +282,10 @@ int capitulo1(PERS *personagem){
       while(1){ 
       scanf("%c", &escolha);
       getchar();
+      printf("\n");
       if(escolha == 'A' || escolha == 'a'){
         printf("Voce avista o goblin de longe e rapidamente voce tenta correr atras dele");
-        printf("\n");
+        printf("\n\n");
         if(goblin.destreza > personagem->destreza){
             printf("apesar de voce ter bastante gas, e acha realmente que vai conseguir alcançar o goblin, "
             "voce acaba tropeçando em um grande buraco, deixando o goblin escapar e fazendo com que a mulher perca os seus itens");
@@ -295,20 +300,20 @@ int capitulo1(PERS *personagem){
         break;
       }
       else if(escolha == 'B' || escolha == 'b'){
-        printf("Voce avista o goblin fugindo, mas achando que ele é muito rápido, e voce"
+        printf("Voce avista o goblin fugindo, mas achando que ele eh muito rapido, e voce"
         " decide nao correr atras, com medo de se cansar e se distrair do seu objetivo principal\n");
-        printf("Por consequencia disso, voce diminuiu 1 ponto de carisma\n");
+        printf("Por consequencia disso, voce perdeu 1 ponto de carisma\n");
         personagem->carisma--;
         status2(*personagem);
         break;
       }
       else if(escolha == 'C' || escolha == 'c'){
-        printf("Voce percebe que o goblin esta indo em sua direção e rapidamente da uma"
-        " rasteira nele jogando a bolsa pra longe. Porém, o goblin fica revoltado com ele e decide ir pra cima de voce, iniciando uma grande briga.");
+        printf("Voce percebe que o goblin esta indo em sua direcao e rapidamente da uma"
+        " rasteira nele jogando a bolsa pra longe. Porem, o goblin fica revoltado e decide ir pra cima de voce, iniciando uma grande briga.");
         vivo = combater(personagem, &goblin);
         if(vivo){
-            printf("%s derrotou com certa facilidade o goblin, que não demonstrava "
-            "muita força física, e devolveu a bolsa para a mulher, sendo aplaudido por uma multidão que os cercava.\n", personagem->nome);
+            printf("%s derrotou com certa facilidade o goblin, que nao demonstrava "
+            "muita forca fisica, e devolveu a bolsa para a mulher, sendo aplaudido por uma multidao que os cercava.\n", personagem->nome);
             printf("Parabens, voce recebeu um aumento de carisma e de forca");
             personagem->forca++;
             personagem->carisma++;
@@ -354,11 +359,12 @@ int capitulo1(PERS *personagem){
             while(1){
             scanf("%c", &escolha);
             getchar();
+            printf("\n");
             if(escolha == 'A' || escolha == 'a'){
-                printf("Quando o homem encapuzado senta na mesa você logo pergunta quem seria o misterioso homem.\n "
-                "Homem Encapuzado: Sou apenas um conhecedor dos segredos de Eldoria. Sei que você busca respostas sobre"
-                " o assassinato de sua família. Há um artefato antigo, perdido há séculos, que pode estar relacionado ao crime que devastou sua vida.\n");
-                printf("Com essa revelacao, as duvidas sobre quem seria o homem e como ele sabia disso surgem na sua cabeça."
+                printf("Quando o homem encapuzado senta na mesa voce logo pergunta quem seria o misterioso homem.\n "
+                "Homem Encapuzado: Sou apenas um conhecedor dos segredos de Eldoria. Sei que voce busca respostas sobre"
+                " o assassinato de sua família. Ha um artefato antigo, perdido ha seculos, que pode estar relacionado ao crime que devastou sua vida.\n");
+                printf("Com essa revelacao, as duvidas sobre quem seria o homem e como ele sabia disso surgem na sua cabeca."
                 " Porem, antes mesmo de você fazer uma pergunta se quer, o homem encapuzado some em frente aos seus olhos.\n\nSua busca por justica agora se intensifica,"
                 " com novas pistas e segredos que precisam ser desvendados.");
                 personagem->capitulo++;
