@@ -1,7 +1,0 @@
-Voce decide atacar o guardiao com toda a sua forca, determinado a derrota-lo.
-
-[]: (gritando) Nao tenho tempo para jogos! Prepare-se!
-Voce lanca um ataque feroz, mas o guardiao e forte demais. Quando suas forcas estao quase se esgotando, o homem encapuzado aparece e intervem.
-
-Homem Encapuzado: (com determinacao) Nao vou deixa-lo enfrentar isso sozinho!
-A batalha continua, agora com a ajuda do homem encapuzado, ate que voces finalmente derrotam o guardiao. +
