@@ -1,0 +1,40 @@
+Em busca do Artefato Perdido
+Determinado a desvendar os misterios que cercam o artefato mencionado pelo homem encapuzado, voce inicia sua busca por informacoes precisas sobre sua origem, poderes e possivel conexao com eventos passados na regiao.
+Ao chegar no centro de Eldoria, voce vai atras de informacoes. Em seu campo de visao tem um sabio, um mercador e um mago. Com quem voce quer falar?
+a) Falar com o sabio.
+b) Falar com o mercador.
+c) Falar com o mago.
++
+[A]: Ao explorar Eldoria em busca de respostas, voce encontra um sabio na biblioteca antiga da cidade. O sabio, um homem de idade avancada com uma longa barba branca e olhos cheios de conhecimento, esta folheando um antigo tomo quando voce se aproxima.
+[A]Sabio: \"Saudacoes, jovem buscador. Posso ajuda-lo em sua jornada por conhecimento?\"
+[A]$: \"Estou procurando informacoes sobre um artefato antigo com grandes poderes. Ele pode estar ligado ao assassinato da minha familia. Pode me ajudar?\"
+[A]Sabio: \"Artefatos antigos... Ha muitos rumores e historias sobre eles. Que tipo de artefato voce procura?\"
+[A]$: \"Um homem encapuzado mencionou um artefato perdido ha seculos. Preciso de qualquer pista sobre sua localizacao.\"
+[A]Sabio (pensando por um momento): \"Se o artefato que voce procura e tao poderoso, ha algumas possibilidades. As ruinas ao norte, na Floresta Sombria, sao conhecidas por abrigar reliquias antigas. As Montanhas Nebulosas tambem sao mencionadas em muitas lendas. E ha um lugar quase mitico, o Vale Escondido.\"
+[A]$: \"Vale Escondido? O que e isso?\"
+[A]Sabio: \"E um lugar envolto em misterio, aparecendo apenas para aqueles com um proposito verdadeiro. Dizem que guarda segredos e reliquias de tempos imemoriais. Poucos sabem como encontra-lo, e menos ainda retornam.\"
+[A]$: \"Obrigado pelas informacoes, sabio. Vou considerar tudo o que disse.\"
+[A]Sabio: \"Boa sorte em sua busca, jovem. Lembre-se, o caminho para a verdade e muitas vezes perigoso e cheio de desafios. Esteja preparado.\"
+[A]Com as novas informacoes do sabio, voce se sente um passo mais perto de desvendar o misterio do artefato e da morte de sua familia. A Floresta Sombria, as Montanhas Nebulosas e o enigmatico Vale Escondido estao agora em sua mente, cada um com seus proprios perigos e segredos a serem desvendados.
+[B]Voce se aproxima de uma barraca cheia de artefatos curiosos e exoticos. O mercador, um homem de meia-idade com olhos atentos e um sorriso astuto, esta organizando suas mercadorias quando voce chega.
+[B]Mercador: \"Bem-vindo, viajante! Posso ajuda-lo a encontrar algo especial?\"
+[B]$: \"Estou em busca de informacoes sobre um artefato antigo com poderes imensos. Pode me ajudar?\"
+[B]Mercador: \"Artefatos poderosos sao raros e perigosos. O que exatamente voce procura?\"
+[B]$: \"Um homem encapuzado mencionou um artefato ligado ao assassinato da minha familia. Preciso de pistas sobre sua localizacao.\"
+[B]Mercador (olhando ao redor discretamente): \"Ha muitas historias sobre objetos assim. Alguns dizem que estao nas ruinas perto da Floresta Sombria. Mas tambem ha rumores sobre as Montanhas Nebulosas e um lugar chamado Vale Escondido.\"
+[B]$: \"Vale Escondido? Pode me dizer mais sobre ele?\"
+[B]Mercador: \"Sei pouco, apenas que e um lugar misterioso, aparecendo apenas para aqueles com um proposito verdadeiro. Talvez um sabio ou mago possa lhe ajudar mais.\"
+[B]$: \"Obrigado pela informacao. Vou seguir sua sugestao.\"
+[B]Mercador: \"Boa sorte, viajante. Tenha cuidado, Eldoria guarda muitos segredos.\"
+[B]Com as novas informacoes do mercador, voce se sente um passo mais perto de desvendar o misterio do artefato e da morte de sua familia. A Floresta Sombria, as Montanhas Nebulosas e o enigmatico Vale Escondido estao agora em sua mente, cada um com seus proprios perigos e segredos a serem desvendados
+[C]Ao explorar Eldoria em busca de respostas, voce encontra um mago em uma das bibliotecas antigas da cidade. O mago, um homem de aparencia imponente e uma aura de sabedoria, esta imerso em um livro antigo quando voce se aproxima.
+[C]Mago: \"Saudacoes, viajante. Posso sentir que voce procura algo alem do comum. Como posso ajudar?\"
+[C]$: \"Estou procurando informacoes sobre um artefato antigo e poderoso. Ele pode estar ligado ao assassinato da minha familia. Pode me ajudar?\"
+[C]Mago: \"Artefatos de grande poder sao raros e perigosos. Qual e o artefato que voce procura?\"
+[C]$: \"Um homem encapuzado mencionou um artefato perdido ha seculos. Preciso de pistas sobre sua localizacao.\"
+[C]Mago (olhando atentamente para voce): \"Entendo. Existem alguns lugares em Eldoria que sao conhecidos por abrigar reliquias antigas. A Floresta Sombria e um deles. As Montanhas Nebulosas tambem guardam muitos segredos. E ha um lugar quase mitico chamado Vale Escondido.\"
+[C]$: \"Vale Escondido? Pode me dizer mais sobre ele?\"
+[C]Mago: \"O Vale Escondido e envolto em misterio, aparecendo apenas para aqueles com um proposito verdadeiro. Dizem que guarda segredos e reliquias de tempos imemoriais, mas encontrar o vale e uma tarefa ardua e perigosa.\"
+[C]$: \"Obrigado pelas informacoes, mago. Vou seguir suas sugestoes.\"
+[C]Mago: \"Boa sorte em sua busca, jovem. E lembre-se, o caminho para a verdade e repleto de perigos. Esteja preparado.\"
+[C]Com as novas informacoes do mago, voce se sente um passo mais perto de desvendar o misterio do artefato e da morte de sua familia. A Floresta Sombria, as Montanhas Nebulosas e o enigmatico Vale Escondido estao agora em sua mente, cada um com seus proprios perigos e segredos a serem desvendados.

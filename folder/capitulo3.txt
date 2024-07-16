@@ -1,0 +1,71 @@
+Capitulo 3: A Jornada as Ruinas
+
+Voce esta se preparando para partir para as ruinas sozinho. A determinacao em seus olhos e evidente.
+[]: (determinadamente) Preciso fazer isso. Nao posso depender de ninguem desta vez. +
+
+=========================================================================================================
+Cena: Entrada das Ruinas
+Voce chega sozinho a entrada das ruinas antigas. A atmosfera e densa e opressiva, mas voce esta resoluto.
+[]: (pensando consigo mesmo) Vamos ver o que esses segredos escondem.
+
+Logo de frente, voce encontra um grande corredor, mas muito suspeito. O que voce faz?
+A) Anda tranquilamente sem medo.
+B) Joga uma pedra que esta ao lado para ver se possui alguma armadilha.
+========================================================================================================= +
+
+Voce chega a uma enorme camara que se abre para um vasto labirinto. As paredes sao altas e cobertas de musgo, e um silencio inquietante paira no ar. Voce para na entrada, avaliando a situacao.
+
+Voce comeca a caminhar pelo labirinto, atento a qualquer sinal de perigo. De repente, uma voz ecoa pelas paredes.
+
+Eco: (sinistra) Apenas os corajosos e sabios podem encontrar o caminho.
+
+[]: (surpreso) Quem esta ai? Mostre=se!
+
+O eco nao responde. Voce continua caminhando, tentando lembrar=se de qualquer dica ou pista que possa ajuda=lo a navegar pelo labirinto. Em um cruzamento, voce ve tres opcoes: um caminho iluminado por uma luz tenue, outro mergulhado na escuridao, e um terceiro com uma leve brisa vindo de dentro.
+Escolha o seu caminho:
+A) Seguir o caminho iluminado.
+B) Seguir o caminho escuro. +
+
+Voce decide seguir o caminho escuro, confiando em sua intuicao.
+[]: (decidido) \"A mente segue as estrelas\"... Talvez o desconhecido seja o caminho certo.
+A medida que avanca, a escuridao parece envolve=lo, mas voce sente que esta no caminho certo. De repente, voce ve um brilho fraco a frente.
+[]: (aliviado) Isso deve ser um bom sinal. Vou continuar.
+Voce segue o brilho e chega a uma nova camara com um pedestal no centro. No pedestal, ha uma inscricao e uma chave antiga.
+Inscricao no Pedestal: \"Somente a chave do conhecimento pode abrir a porta da sabedoria.\"
+[]: (pegando a chave) Parece que estou no caminho certo. Preciso encontrar a porta que essa chave abre.
+Voce guarda a chave e continua pelo labirinto, agora com mais confianca. Apos alguns minutos de caminhada, voce chega a uma grande porta antiga, com um buraco para a chave.
+[]: (colocando a chave na fechadura) Vamos ver se isso funciona...
+Voce gira a chave e a porta se abre lentamente, revelando a proxima parte das ruinas.
+[]: (sorrindo) Consegui. Agora, para o proximo desafio. +
+
+Cena: Entrada na Camara do Guardiao
+Voce adentra uma grande camara onde o guardiao ancestral o aguarda. A criatura emana um poder aterrorizante.
+Guardiao Ancestral: (com uma voz profunda e ecoante) Quem ousa perturbar o santuario das ruinas?
+[]: (firmemente) Estou aqui em busca de respostas e de justica.
+Guardiao Ancestral: (rindo desdenhosamente) Voce nao e digno de descobrir os segredos que guardo.
+Uma batalha feroz comeca. Voce luta com todas as suas forcas, mas o guardiao parece invencivel. 
+
+Cena: Momento Critico da Batalha
+
+No momento mais critico, quando suas forcas estao quase se esgotando e tudo parece perdido, o homem encapuzado aparece de repente, intervindo heroicamente.
+Homem Encapuzado: (com determinacao) Nao vou deixa=lo enfrentar isso sozinho!
+O homem encapuzado revela habilidades e conhecimentos surpreendentes, utilizando magia e estrategia para ajudar na luta.
+Guardiao Ancestral: (surpreso) Como voce conhece esses poderes?
+Homem Encapuzado: (enigmatico) Ha mais coisas entre o ceu e a terra do que voce pode imaginar.
+Com a ajuda do homem encapuzado, voces conseguem finalmente derrotar o guardiao. +
+
+Cena: Descoberta Perturbadora
+Apos a batalha, o guardiao, em seus ultimos momentos, revela uma verdade perturbadora.
+Guardiao Ancestral: (com a voz enfraquecida) Voces venceram, mas o verdadeiro perigo esta alem... O culto... A seita que deseja o poder do artefato...
+[]: (ansioso) Que culto e esse? O que eles querem?
+Guardiao Ancestral: (com suas ultimas forcas) Eles buscam o poder para dominar e destruir. Voces precisam impedi=los... Antes que seja tarde demais...
+O guardiao sucumbe, e voces sao deixados com a revelacao perturbadora sobre o culto.
+
+Cena Final: Reflexao e Preparacao
+Voces deixam a camara do guardiao, carregados com a nova informacao e o peso da responsabilidade.
+[]: (refletindo) Um culto... Isso muda tudo. Precisamos encontrar esse artefato antes deles.
+Homem Encapuzado: (com um olhar sombrio) E descobrir quem sao esses cultistas. A batalha esta apenas comecando. +
+
+Escolha uma das opcoes para dialogar com o guardiao
+A) Tentar dialogar com o guardiao para ganhar tempo.
+B) Atacar o guardiao com toda a sua forca. +
