@@ -1,5 +1,0 @@
-Voce pega alguns pedregulhos que estao perto de voce e os arremessa em varias direcoes e sentidos desse corredor. Gracas a essa estrategia, todas as armadilhas foram acionadas e bastava voce esperar todas elas desativarem. Logo apos isso, voce sai andando pelo corredor.
-
-[]: (satisfeito) Isso deve cuidar das armadilhas.
-
-Voce observa enquanto flechas e laminas sao disparadas e ativadas, mas, depois de alguns minutos, o corredor fica silencioso novamente. Voce continua andando pelo corredor, agora mais seguro. +
