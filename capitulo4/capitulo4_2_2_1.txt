@@ -1,0 +1,11 @@
+[Z]Você decide ficar na posição e continuar observando e ouvindo.
+[Z]Encapuzado 3: Precisamos nos preparar para a chegada do artefato. O ritual deve ser concluído antes do próximo eclipse lunar.
+[Z]Eles continuam discutindo detalhes sobre seus planos e como o artefato será usado para fortalecer o culto.
+[Z]Escolha uma nova ação:
+[Z]a) Espera até que a reunião termine para sair sem ser visto.
+[Z]b) Procura uma rota de fuga discreta para deixar o local imediatamente.
+[Z]+
+[A]@
+capitulo4_2_2_1_1.txt&
+[B]@
+capitulo4_2_2_1_2.txt&
