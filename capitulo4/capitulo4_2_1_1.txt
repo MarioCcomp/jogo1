@@ -1,0 +1,11 @@
+[Z]Você decide ficar onde está, escondido nas sombras, ouvindo mais da conversa.
+[Z]Encapuzado 2: (ansioso) O que faremos se alguém nos seguir até aqui?
+[Z]Encapuzado 3: (confiante) Não se preocupe. Nossa segurança está garantida. O líder já está ciente de tudo.
+[Z]Eles continuam discutindo detalhes sobre seus planos e como o artefato será usado para fortalecer o culto.
+[Z]Escolha uma nova ação:
+[Z]a) Espera até que a reunião termine para sair sem ser visto.
+[Z]b) Procura uma rota de fuga discreta para deixar o prédio imediatamente.
+[A]@
+capitulo4_2_2_1_1.txt&
+[B]@
+capitulo4_2_2_1_2.txt&
