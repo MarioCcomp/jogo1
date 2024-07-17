@@ -57,12 +57,12 @@ void inicializarAtaques() {
     strcpy(ataq2->nome, "bilada");
     strcpy(ataq3->nome, "Corta relampago");
 
-    ataq1->dano = 30;
-    ataq2->dano = 50;
+    ataq1->dano = 25;
+    ataq2->dano = 15;
     ataq3->dano = 20;
 }
 
-void liberarAtaques() { // Libera a memoria alocada
+void liberarAtaques() {
     free(ataq1);
     free(ataq2);
     free(ataq3);
@@ -111,6 +111,7 @@ void status(PERS *heroi, PERS *vilao)
 
 int combater(PERS *heroi, PERS *vilao)
 {
+    printf("Comeca a luta entre %s e %s\n", heroi->nome, vilao->nome);
     int turno = 0;
     if (heroi->destreza < vilao->destreza) {
         turno = 1;
@@ -208,7 +209,6 @@ PERS pegarDig(int dig){
         limparTela();
         distribuir(pontos, &personagem);
         limparTela();
-        status2(personagem);
         personagem.capitulo = 1;
         fwrite(&personagem, 1, sizeof(PERS), salvar);
         fclose(salvar);
@@ -354,6 +354,48 @@ void printarMens(PERS personagem){
     }
 }
 
+void printarFim(PERS personagem){
+        int choice;
+        while(1){
+        printf("\nDigite 1 para ver o status do seu personagem\nDigite 2 para sair do jogo\nFaca sua escolha: ");
+        scanf("%d", &choice);
+        getchar();
+         if(choice == 1){
+            limparTela();
+            status2(personagem);
+        }
+        else if(choice == 2){
+            if(personagem.capitulo == 1){
+                FILE *fp;
+                fp = fopen("salvar.bin", "w");
+                fclose(fp);
+            }
+            exit(1);
+        }
+        else{
+            printf("Digite um digito valido\n");
+        }
+    }
+}
+
+void limparBufferTeclado() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) {
+        // Descarta o caractere lido
+    }
+}
+
+void printarFiltrado(char texto[1001], char nome[40])
+{
+    for (int i=3; i<strlen(texto); i++) {
+        if (texto[i] == '$') {
+            printf("%s", nome);
+        } else {
+            printf("%c", texto[i]);
+        }
+    }
+}
+
 
 int capitulo1(PERS *personagem){
     int vivo;
@@ -369,6 +411,7 @@ int capitulo1(PERS *personagem){
     goblin.ataques[2] = ataq3;
     goblin.vida = 40;
     strcpy(goblin.nome, "Goblin");
+    limparTela();
     position = printar2("capitulo1.txt", personagem, position);
       printf("\n");
       char escolha;
@@ -376,25 +419,25 @@ int capitulo1(PERS *personagem){
       while(1){ 
       scanf("%c", &escolha);
       getchar();
-      printf("\n");
+      limparTela();
       if(escolha == 'A' || escolha == 'a'){
         if(goblin.destreza > personagem->destreza){
             printar("capitulo1parte1AF.txt", personagem);
-            printf("Pelo seu esforco, voce acaba de receber 1 ponto de destreza");
+            printf("\nPelo seu esforco, voce acaba de receber 1 ponto de destreza");
             personagem->destreza++;
         }
         else{
             printar("capitulo1parte1AV.txt", personagem);
             personagem->destreza++;
             personagem->carisma++;
-            printf("Como recompensa, voce recebeu um ponto de destreza e de carisma\n");
+            printf("\nComo recompensa, voce recebeu um ponto de destreza e de carisma\n");
         }
         printarMens(*personagem);
         break;
       }
       else if(escolha == 'B' || escolha == 'b'){
         printar("capitulo1parte1B.txt", personagem);
-        printf("Por consequencia disso, voce perdeu 1 ponto de carisma\n");
+        printf("\nPor consequencia disso, voce perdeu 1 ponto de carisma\n");
         personagem->carisma--;
         printarMens(*personagem);
         break;
@@ -431,7 +474,7 @@ int capitulo1(PERS *personagem){
             while(1){
             scanf("%c", &escolha);
             getchar();
-            printf("\n");
+            limparTela();
             if(escolha == 'A' || escolha == 'a'){
                 printar("capitulo1parte2A.txt", personagem);
                 printf("\n");
@@ -457,14 +500,9 @@ int capitulo1(PERS *personagem){
             }
 }
 
-int capitulo2(PERS *personagem){
-    personagem->capitulo = 3;
-    return 1;
-}
-
 int capitulo2(PERS *personagem)
 {
-    FILE *f = fopen("capitulo2/capitulo2.txt", "r");
+    FILE *f = fopen("capitulo2.txt", "r");
     char texto[1001];
     char escolha = 'Z';
     while (fgets(texto, sizeof(texto), f) != NULL) {
@@ -503,12 +541,15 @@ int capitulo2(PERS *personagem)
         personagem->magia += 10;
         printf("Voce recebeu 10 pontos de magia");
     }
+    personagem->capitulo++;
+    salvar(*personagem);
     return 1;
 }
 
+
 int capitulo3(PERS *personagem){
     char escolha;
-    long position = 0;
+    long position = 0, p2 = 0;
     position = printar2("capitulo3.txt", personagem, position);
     printf("\n");
     printarMens(*personagem);
@@ -537,7 +578,9 @@ int capitulo3(PERS *personagem){
         printar("cp3pt2opa.txt", personagem);
     }
     else if(escolha == 'b' || escolha == 'B'){
-        printar("cp3pt2opb.txt", personagem);
+        p2 = printar2("cp3pt2opb.txt", personagem, p2);
+        printarMens(*personagem);
+        p2 = printar2("cp3pt2opb.txt", personagem, p2);
     }
     position = printar2("capitulo3.txt", personagem, position);
     printf("\n");
@@ -550,31 +593,30 @@ int capitulo3(PERS *personagem){
     printarMens(*personagem);
     position = printar2("capitulo3.txt", personagem, position);
     printf("\nFaca sua escolha: ");
+    while(1){
     scanf("%c", &escolha);
+    getchar();
     if(escolha == 'a' || escolha == 'A'){
         printar("cp3pt3opa.txt", personagem);
+        printf("\n");
+        printarMens(*personagem);
+        personagem->capitulo++;
+        break;
     }
     else if(escolha == 'b' || escolha == 'B'){
         printar("cp3pt3opb.txt", personagem);
+        printf("\n");
+        printarMens(*personagem);
+        personagem->capitulo++;
+        break;
+    }
+    else{
+        printf("\nDigite uma opcao valida: ");
+    }
     }
     return 0;
 }
-void limparBufferTeclado() {
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF) {
-        // Descarta o caractere lido
-    }
-}
-void printarFiltrado(char texto[1001], char nome[40])
-{
-    for (int i=3; i<strlen(texto); i++) {
-        if (texto[i] == '$') {
-            printf("%s", nome);
-        } else {
-            printf("%c", texto[i]);
-        }
-    }
-}
+
 int capitulo4(PERS *personagem, char arquivo[30])
 {
     limparTela();
@@ -603,8 +645,99 @@ int capitulo4(PERS *personagem, char arquivo[30])
             }
         }
     }
+    personagem->capitulo++;
+    salvar(*personagem);
     return 1;
 }
+
+int capitulo5(PERS *personagem){
+    salvar(*personagem);
+    PERS vilao;
+    vilao.forca = (rand()%4) + 1;
+    vilao.defesa = (rand()%4) + 1;
+    vilao.destreza = (rand()%4) + 1;
+    vilao.magia = (rand()%4) + 1;
+    vilao.folego = (rand()%4) + 1;
+    vilao.ataques[0] = ataq1;
+    vilao.ataques[1] = ataq2;
+    vilao.ataques[2] = ataq3;
+    vilao.vida = 60;
+    strcpy(vilao.nome, "Lord Dredge");
+    int vivo = 0, temp;
+    char escolha;
+    long position = 0;
+    position = printar2("capitulo5.txt", personagem, position);
+    printarMens(*personagem);
+    position = printar2("capitulo5.txt", personagem, position);
+    printarMens(*personagem);
+    position = printar2("capitulo5.txt", personagem, position);
+    printarMens(*personagem);
+    vivo = combater(personagem, &vilao);
+    printf("\n");
+    position = printar2("capitulo5.txt", personagem, position);
+    printarMens(*personagem);
+    position = printar2("capitulo5.txt", personagem, position);
+    printarMens(*personagem);
+    position = printar2("capitulo5.txt", personagem, position);
+    printarMens(*personagem);
+    position = printar2("capitulo5.txt", personagem, position);
+    printf("\n");
+    printf("\n");
+    printar("capitulo5esc.txt", personagem);
+    printf("\nFaça sua escolha: ");
+    while(1){
+    scanf("%c", &escolha);
+    getchar();
+    if(escolha == 'A' || escolha == 'a'){
+        printar("capitulo5A.txt", personagem);
+        printf("\n\n");
+        printf("Voce chegou ao fim do jogo, parabens\n");
+        while(1){
+        printarFim(*personagem);
+        scanf("%d", &temp);
+        getchar();
+        if(temp != 1 || temp != 2){
+            printf("Digite um numero valido: ");
+        }
+        }
+    }
+    else if(escolha == 'B' || escolha == 'b'){
+        printar("capitulo5B.txt", personagem);
+        printf("\n\n");
+        printf("Voce chegou ao fim do jogo, parabens\n");
+        while(1){
+        printarFim(*personagem);
+        scanf("%d", &temp);
+        getchar();
+        if(temp != 1 || temp != 2){
+            printf("Digite um numero valido: ");
+        }
+        }
+    }
+    else if(escolha == 'C' || escolha == 'c'){
+        printar("capitulo5C.txt", personagem);
+        printf("\n\n");
+        printf("Voce chegou ao fim do jogo, parabens\n");
+        while(1){
+        printarFim(*personagem);
+        scanf("%d", &temp);
+        getchar();
+        if(temp != 1 || temp != 2){
+            printf("Digite um numero valido: ");
+        }
+        }
+
+    }
+    else{
+        printf("Escolha uma opcao valida: ");
+    }
+    }
+    
+    
+    return 1;
+}
+
+
 
 void salvar(PERS personagem){
     FILE *fp;
@@ -625,15 +758,14 @@ int historia(PERS *personagem){
     }
     else if(cp == 3){
         capitulo3(personagem);
-        return 0;
+        return 1;
     }
     else if(cp == 4){
-        strcpy(arquivo, "capitulo4.txt");
-        capitulo4(personagem, arquivo);
+        capitulo4(personagem, "capitulo4.txt");
         return 1;
     }
     else if(cp == 5){
-        //capitulo5(personagem);
+        capitulo5(personagem);
         return 0;
     }
     return 0;
@@ -667,9 +799,7 @@ int main()
     personagem = pegarDig(digito); // Verifica o digito de entrada
     while(teste){
     teste = historia(&personagem);
-    }
-    
-        
+    }  
 
     
     return 0;
