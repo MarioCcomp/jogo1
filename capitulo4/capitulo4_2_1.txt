@@ -1,0 +1,11 @@
+[Z]Você decide seguir o homem para dentro do prédio abandonado, mantendo-se nas sombras para não ser visto.
+[Z]Dentro, você encontra uma reunião clandestina de pessoas encapuzadas discutindo em voz baixa. Parece que todos estão aguardando a chegada de alguém importante.
+[Z]Encapuzado 1: (em voz baixa) O líder está a caminho. Ele trará as últimas instruções.
+[Z]Escolha uma nova ação:
+[Z]a) Continua escondido e ouve a conversa.
+[Z]b) Tenta se mover silenciosamente para sair do prédio sem ser notado.
+[Z]+
+[A]@
+capitulo4_2_1_1.txt&
+[B]@
+capitulo4_2_2_1_2.txt&
