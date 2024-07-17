@@ -1,0 +1,11 @@
+[Z]Você decide seguir discretamente o homem suspeito.
+[Z]$: (pensando) Ele parece suspeito... Melhor segui-lo e ver para onde ele vai.
+[Z]Você segue o homem por algumas ruas movimentadas, até que ele entre furtivamente em um prédio abandonado nos arredores da cidade.
+[Z]Escolha uma nova ação:
+[Z]a) Segue o homem para dentro do prédio.
+[Z]b) Espia pela janela para ver o que está acontecendo dentro.
+[Z]+
+[A]@
+capitulo4_2_1.txt&
+[B]@
+capitulo4_2_2.txt&
