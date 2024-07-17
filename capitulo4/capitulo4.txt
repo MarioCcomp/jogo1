@@ -1,0 +1,9 @@
+[Z]Após a batalha nas ruínas e a revelação do culto, você mergulha mais fundo na busca pela verdade sobre o culto da cidade de Eldoria. Cada pista seguida revela mais segredos obscuros, conspirações e traições que permeiam o poder na cidade. Vocês descobrem que o líder desse culto é o principal líder da cidade.
+[Z]Vocês estão no mercado movimentado de Eldoria, tentando encontrar informações sobre o culto e seu líder. O que você faz?
+[Z]a) Aborda um vendedor amigável para obter informações.
+[Z]b) Segue discretamente um homem suspeito que parece estar observando você.
+[Z]+
+[A]@
+capitulo4_1.txt&
+[B]@
+capitulo4_2.txt&
