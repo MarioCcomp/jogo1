@@ -1,0 +1,8 @@
+[Z]$: (amigavelmente) Olá! Estou procurando informações. Ouvi rumores sobre um culto na cidade. Você sabe algo sobre isso?
+[Z]Vendedor: (olhando nervosamente ao redor) Cuidado com o que fala... Sim, ouvi falar desse culto. Dizem que até o líder da cidade está envolvido. Tenho ouvido cochichos entre os mercadores sobre reuniões secretas.
+[Z]Escolha uma nova ação:
+[Z]a) Pergunta mais detalhes sobre os rumores.
+[Z]b) Agradece e decide sair do mercado.
+[Z]+
+[A]@
+capitulo4_1_1.txt&
