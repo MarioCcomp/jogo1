@@ -462,16 +462,13 @@ int capitulo2(PERS *personagem){
     return 1;
 }
 
-/*
+int capitulo2(PERS *personagem)
 {
-    FILE *f = fopen("capitulo2.txt", "r");
+    FILE *f = fopen("capitulo2/capitulo2.txt", "r");
     char texto[1001];
     char escolha = 'Z';
     while (fgets(texto, sizeof(texto), f) != NULL) {
         int tam = strlen(texto);
-        if (texto[0] == '+') {
-            scanf("%c", &escolha);
-        }
         if (escolha == 'a' || escolha == 'A') {
             if (texto[0] == '[' && texto[1] == 'A' && texto[2] == ']') {
                 printarFiltrado(texto, personagem->nome);
@@ -487,8 +484,12 @@ int capitulo2(PERS *personagem){
                 printarFiltrado(texto, personagem->nome);
                 printf("\n");
             }
-        } else {
-            printf("%s\n", texto);
+        } else if (escolha == 'Z') {
+            if (texto[3] == '+') {
+                scanf("%c", &escolha);
+            }
+            printarFiltrado(texto, personagem->nome);
+            printf("\n");
         }
     }
     printf("\n");
@@ -503,7 +504,7 @@ int capitulo2(PERS *personagem){
         printf("Voce recebeu 10 pontos de magia");
     }
     return 1;
-}*/
+}
 
 int capitulo3(PERS *personagem){
     char escolha;
@@ -558,8 +559,52 @@ int capitulo3(PERS *personagem){
     }
     return 0;
 }
-
-
+void limparBufferTeclado() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) {
+        // Descarta o caractere lido
+    }
+}
+void printarFiltrado(char texto[1001], char nome[40])
+{
+    for (int i=3; i<strlen(texto); i++) {
+        if (texto[i] == '$') {
+            printf("%s", nome);
+        } else {
+            printf("%c", texto[i]);
+        }
+    }
+}
+int capitulo4(PERS *personagem, char arquivo[30])
+{
+    limparTela();
+    limparBufferTeclado();
+    char file[50] = "capitulo4/";
+    strcat(file, arquivo);
+    FILE *f = fopen(file, "r");
+    char texto[1001];
+    char escolha = 'Z';
+    while (fgets(texto, sizeof(texto), f) != NULL) {
+        int tam = strlen(texto);
+        if (texto[0] == '[' && (texto[1] == escolha  || texto[1] == escolha - 32) && texto[2] == ']') {
+            if (texto[3] == '+') {
+                scanf(" %c", &escolha);
+            } else if (texto[3] == '@') {
+                fgets(texto, sizeof(texto), f);
+                char ch = '&';
+                char *pos = strchr(texto, ch);
+                int index = pos - texto;
+                texto[index] = '\0';
+                capitulo4(personagem, texto);
+                break;
+            } else {
+                printarFiltrado(texto, personagem->nome);
+                printf("\n");
+            }
+        }
+    }
+    return 1;
+}
 
 void salvar(PERS personagem){
     FILE *fp;
@@ -583,7 +628,8 @@ int historia(PERS *personagem){
         return 0;
     }
     else if(cp == 4){
-       // capitulo4(personagem);
+        strcpy(arquivo, "capitulo4.txt");
+        capitulo4(personagem, arquivo);
         return 1;
     }
     else if(cp == 5){
