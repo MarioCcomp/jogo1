@@ -1,0 +1,13 @@
+[Z]Você percebe que o tempo é essencial e decide encontrar uma saída alternativa antes que os encapuzados percebam sua presença. Com cautela, você explora os arredores do prédio abandonado em busca de uma rota de fuga discreta. Encontrando uma porta lateral entreaberta, você se desloca para fora do prédio sem ser detectado.
+[Z]Agora fora do alcance dos encapuzados, você se move rapidamente pelos becos e vielas da cidade, mantendo-se nas sombras para evitar qualquer patrulha ou olhares curiosos. Seu objetivo é encontrar o homem encapuzado em um local seguro para discutir suas descobertas e planejar os próximos passos.
+[Z]Depois de algum tempo de movimento furtivo, você finalmente encontra o homem encapuzado em uma taverna afastada. Com cautela, você se aproxima e o encontra em um canto escuro, pronto para discutir estratégias para enfrentar o líder do culto e recuperar o artefato antes que seja tarde demais.
+[Z]Homem Encapuzado: (sussurrando) Você conseguiu escapar sem problemas? O que descobriu lá dentro?
+[Z]Você compartilha suas descobertas com ele em murmúrios rápidos, ambos cientes de que o tempo é curto e que cada nova revelação apenas aumenta a urgência de seus próximos passos.
+[Z]Escolha uma nova ação:
+[Z]a) Planeja o próximo movimento com o homem encapuzado.
+[Z]b) Discute a estratégia para enfrentar o líder do culto.
+[Z]+
+[A]Você e o homem encapuzado encontram um lugar seguro para planejar seus próximos passos. Sentados em um canto escuro da taverna, vocês discutem estratégias enquanto trocam informações cruciais sobre o culto e o líder da cidade. O homem encapuzado revela detalhes adicionais sobre a natureza sombria dos rituais e a importância do artefato.
+[A]Juntos, vocês traçam um plano detalhado para confrontar o líder do culto e recuperar o artefato antes que seja tarde demais. Cada movimento é calculado para minimizar riscos e aumentar suas chances de sucesso. Após horas de planejamento meticuloso, vocês se preparam para a batalha final que se aproxima.
+[B]Optando por discutir a estratégia imediata, você e o homem encapuzado concentram-se no desafio iminente de enfrentar o líder do culto. Em um beco escuro, longe de olhares curiosos, vocês debatem sobre como abordar o confronto e quais são os pontos fracos que podem ser explorados.
+[B]O homem encapuzado compartilha suas próprias experiências e conhecimentos, revelando uma visão mais profunda das conexões obscuras entre o líder do culto e a cidade de Eldoria. Juntos, vocês decidem sobre os próximos passos, cada decisão guiada pela necessidade de neutralizar a ameaça representada pelo culto e recuperar o artefato antes que caia nas mãos erradas.
