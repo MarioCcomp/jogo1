@@ -1,0 +1,12 @@
+[Z]Você opta por espiar pela janela do prédio abandonado para ver o que está acontecendo lá dentro.
+[Z]Pela janela, você vê uma reunião de pessoas encapuzadas, cada uma segurando um pergaminho antigo e discutindo em murmúrios sobre rituais e o poder do artefato.
+[Z]Encapuzado 1: ...quando o artefato estiver em nossas mãos, Eldoria conhecerá nosso verdadeiro poder.
+[Z]Encapuzado 2: O líder da cidade está completamente alheio a nossos planos. Ele não deve interferir até que estejamos prontos.
+[Z]Escolha uma nova ação:
+[Z]a) Continua espionando para obter mais informações.
+[Z]b) Decide sair e encontrar o homem encapuzado para discutir suas descobertas.
+[Z]+
+[A]@
+capitulo4_2_2_1.txt&
+[B]@
+capitulo4_2_2_1_2.txt&
