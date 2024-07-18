@@ -326,7 +326,7 @@ void printarMens(PERS personagem){
         int choice;
         while(1){
             printf("\n================================================");
-            printf("\nDigite 1 para continuar\nDigite 2 para ver o status do seu personagem\nDigite 3 para sair do jogo (AVISO: Caso esteja no meio do capitulo, o progresso atual sera perdido e o jogo voltara ao comeco do capitulo atual)");
+            printf("\nDigite 1 para continuar\nDigite 2 para ver o status do seu personagem\nDigite 3 para sair do jogo (AVISO: Caso esteja no meio do capitulo, o progresso atual sera perdido e o jogo voltara ao comeco do capitulo atual)\n");
             printf("==================================================");
             printf("\nFaca sua escolha: ");
             scanf("%d", &choice);
