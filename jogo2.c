@@ -37,8 +37,8 @@ ATAQUE *ataq1, *ataq2, *ataq3;
 
 void limparTela()
 {
-     system("cls"); //Use este caso esteja rodando em windows
-   // system("clear"); //Use este caso esteja rodando em linux
+   //  system("cls"); //Use este caso esteja rodando em windows
+   system("clear"); //Use este caso esteja rodando em linux
 }
 
 void inicializarAtaques() {
@@ -188,7 +188,7 @@ void distribuir(int pontos, PERS *personagem){
 
 void status2(PERS personagem){
     printf("\n"); 
-    printf("%s voce tem os seguintes atributos:\nForca: %d\nDefesa: %d\nMagia: %d\nFolego: %d\nDestreza: %d\nCarisma: %d\n\n", personagem.nome, personagem.forca, personagem.defesa, personagem.magia, personagem.folego, personagem.destreza, personagem.carisma);
+    printf("%s voce tem os seguintes atributos:\nForca: %d\nDefesa: %d\nMagia: %d\nFolego: %d\nDestreza: %d\nCarisma: %d\nCapitulo: %d\n\n", personagem.nome, personagem.forca, personagem.defesa, personagem.magia, personagem.folego, personagem.destreza, personagem.carisma, personagem.capitulo);
 }
 
 PERS pegarDig(int dig){
@@ -215,33 +215,29 @@ PERS pegarDig(int dig){
         return personagem;
     }
     else if(dig == 2){
-    FILE *salvar;
-    int choice;
-    salvar = fopen("salvar.bin", "r");
-    PERS save;
-    fread(&save, sizeof(PERS), 1, salvar);
-    status2(save);
-    //printf("\n");
-    while(1){
-                    printf("Digite 1 para continuar\nDigite 2 para ver o status do seu personagem\nFaca sua escolha: ");
-                    scanf("%d", &choice);
-                    getchar();
-                    if(choice == 1){
-                        limparTela();
-                        break;
-                    }
-                    else if(choice == 2){
-                        limparTela();
-                        status2(save);
-                    }
-                    else{
-                        printf("Digite um digito valido");
-                    }
-                }
-    return save;
-    }
-    else if(dig == 3){
-        exit(1);
+        FILE *salvar;
+        int choice;
+        salvar = fopen("salvar.bin", "r");
+        PERS save;
+        fread(&save, sizeof(PERS), 1, salvar);
+        status2(save);
+        //printf("\n");
+        while(1) {
+            printf("Digite 1 para continuar\nDigite 2 para ver o status do seu personagem\nDigite 3 para ver os creditos\nFaca sua escolha: ");
+            scanf("%d", &choice);
+            getchar();
+            if(choice == 1){
+                limparTela();
+                break;
+            }
+            else if(choice == 2){
+                limparTela();
+                status2(save);
+            } else{
+                printf("Digite um digito valido");
+            }
+        }
+        return save;
     }
     return retorno;
 }
@@ -329,35 +325,38 @@ long printar2(char *file, PERS *personagem, long position){
 void printarMens(PERS personagem){
         int choice;
         while(1){
-        printf("\nDigite 1 para continuar\nDigite 2 para ver o status do seu personagem\nDigite 3 para sair do jogo (AVISO: Caso esteja no meio do capitulo, o progresso atual sera perdido e o jogo voltara ao comeco do capitulo atual)\nFaca sua escolha: ");
-        scanf("%d", &choice);
-        getchar();
-        if(choice == 1){
-            limparTela();
-            break;
-        }
-        else if(choice == 2){
-            limparTela();
-            status2(personagem);
-        }
-        else if(choice == 3){
-            if(personagem.capitulo == 1){
-                FILE *fp;
-                fp = fopen("salvar.bin", "w");
-                fclose(fp);
+            printf("\n================================================");
+            printf("\nDigite 1 para continuar\nDigite 2 para ver o status do seu personagem\nDigite 3 para sair do jogo (AVISO: Caso esteja no meio do capitulo, o progresso atual sera perdido e o jogo voltara ao comeco do capitulo atual)");
+            printf("==================================================");
+            printf("\nFaca sua escolha: ");
+            scanf("%d", &choice);
+            getchar();
+            if(choice == 1){
+                limparTela();
+                break;
             }
-            exit(1);
+            else if(choice == 2){
+                limparTela();
+                status2(personagem);
+            }
+            else if(choice == 3){
+                if(personagem.capitulo == 1){
+                    FILE *fp;
+                    fp = fopen("salvar.bin", "w");
+                    fclose(fp);
+                }
+                exit(1);
+            } 
+            else{
+                printf("Digite um digito valido\n");
+            }
         }
-        else{
-            printf("Digite um digito valido\n");
-        }
-    }
 }
 
 void printarFim(PERS personagem){
         int choice;
         while(1){
-        printf("\nDigite 1 para ver o status do seu personagem\nDigite 2 para sair do jogo\nFaca sua escolha: ");
+        printf("\nDigite 1 para ver o status do seu personagem\nDigite 2 para sair do jogo\nDigite 3 para ver os creditos\nFaca sua escolha: ");
         scanf("%d", &choice);
         getchar();
          if(choice == 1){
@@ -371,8 +370,13 @@ void printarFim(PERS personagem){
                 fclose(fp);
             }
             exit(1);
+        } else if(choice == 3){
+            printf("Feito por:\n");
+            printf("Joao Pedro Martinelli\n");
+            printf("Mario Junior\n");
+            printf("Matheus Constantino\n");
         }
-        else{
+        else {
             printf("Digite um digito valido\n");
         }
     }
@@ -412,7 +416,7 @@ int capitulo1(PERS *personagem){
     goblin.vida = 40;
     strcpy(goblin.nome, "Goblin");
     limparTela();
-    position = printar2("capitulo1.txt", personagem, position);
+    position = printar2("folder/capitulo1.txt", personagem, position);
       printf("\n");
       char escolha;
       printf("Digite uma opcao: ");
@@ -422,12 +426,12 @@ int capitulo1(PERS *personagem){
       limparTela();
       if(escolha == 'A' || escolha == 'a'){
         if(goblin.destreza > personagem->destreza){
-            printar("capitulo1parte1AF.txt", personagem);
+            printar("folder/capitulo1parte1AF.txt", personagem);
             printf("\nPelo seu esforco, voce acaba de receber 1 ponto de destreza");
             personagem->destreza++;
         }
         else{
-            printar("capitulo1parte1AV.txt", personagem);
+            printar("folder/capitulo1parte1AV.txt", personagem);
             personagem->destreza++;
             personagem->carisma++;
             printf("\nComo recompensa, voce recebeu um ponto de destreza e de carisma\n");
@@ -436,7 +440,7 @@ int capitulo1(PERS *personagem){
         break;
       }
       else if(escolha == 'B' || escolha == 'b'){
-        printar("capitulo1parte1B.txt", personagem);
+        printar("folder/capitulo1parte1B.txt", personagem);
         printf("\nPor consequencia disso, voce perdeu 1 ponto de carisma\n");
         personagem->carisma--;
         printarMens(*personagem);
@@ -468,7 +472,7 @@ int capitulo1(PERS *personagem){
       }
 
       // PARTE 2 CAP 1
-        position = printar2("capitulo1.txt", personagem, position);
+        position = printar2("folder/capitulo1.txt", personagem, position);
             printf("\n");
             printf("Escolha sua opcao: ");
             while(1){
@@ -476,17 +480,17 @@ int capitulo1(PERS *personagem){
             getchar();
             limparTela();
             if(escolha == 'A' || escolha == 'a'){
-                printar("capitulo1parte2A.txt", personagem);
+                printar("folder/capitulo1parte2A.txt", personagem);
                 printf("\n");
-                personagem->capitulo++;
+                // personagem->capitulo++;
                 salvar(*personagem);
                 printarMens(*personagem);
                 return 1;
             }
             else if(escolha == 'B' || escolha == 'b'){
-                printar("capitulo1parte2B.txt", personagem);
+                printar("folder/capitulo1parte2B.txt", personagem);
                 printf("\n");
-                personagem->capitulo++;
+                // personagem->capitulo++;
                 salvar(*personagem);
                 
                 printarMens(*personagem);
@@ -502,7 +506,7 @@ int capitulo1(PERS *personagem){
 
 int capitulo2(PERS *personagem)
 {
-    FILE *f = fopen("capitulo2.txt", "r");
+    FILE *f = fopen("folder/capitulo2.txt", "r");
     char texto[1001];
     char escolha = 'Z';
     while (fgets(texto, sizeof(texto), f) != NULL) {
@@ -541,19 +545,20 @@ int capitulo2(PERS *personagem)
         personagem->magia += 10;
         printf("Voce recebeu 10 pontos de magia");
     }
-    personagem->capitulo++;
+    // personagem->capitulo++;
     salvar(*personagem);
     return 1;
 }
 
 
 int capitulo3(PERS *personagem){
+    printf("\n");
     char escolha;
     long position = 0, p2 = 0;
-    position = printar2("capitulo3.txt", personagem, position);
+    position = printar2("folder/capitulo3.txt", personagem, position);
     printf("\n");
     printarMens(*personagem);
-    position = printar2("capitulo3.txt", personagem, position);
+    position = printar2("folder/capitulo3.txt", personagem, position);
     
 
     printf("\nFaca sua escolha: ");
@@ -561,53 +566,53 @@ int capitulo3(PERS *personagem){
     getchar();
     if(escolha == 'A' || escolha == 'a'){
         limparTela();
-        printar("capitulo3opcaoa.txt", personagem);
+        printar("folder/capitulo3opcaoa.txt", personagem);
     }
     else if(escolha == 'B' || escolha == 'b'){
         limparTela();
-        printar("capitulo3opcaob.txt", personagem);
+        printar("folder/capitulo3opcaob.txt", personagem);
     }
    //parte 2 cap 3
 
-    position = printar2("capitulo3.txt", personagem, position);
+    position = printar2("folder/capitulo3.txt", personagem, position);
     printf("\nFaca sua escolha: ");
     scanf("%c", &escolha);
     getchar();
     limparTela();
     if(escolha == 'a' || escolha == 'A'){
-        printar("cp3pt2opa.txt", personagem);
+        printar("folder/cp3pt2opa.txt", personagem);
     }
     else if(escolha == 'b' || escolha == 'B'){
-        p2 = printar2("cp3pt2opb.txt", personagem, p2);
+        p2 = printar2("folder/cp3pt2opb.txt", personagem, p2);
         printarMens(*personagem);
-        p2 = printar2("cp3pt2opb.txt", personagem, p2);
+        p2 = printar2("folder/cp3pt2opb.txt", personagem, p2);
     }
-    position = printar2("capitulo3.txt", personagem, position);
+    position = printar2("folder/capitulo3.txt", personagem, position);
     printf("\n");
     printarMens(*personagem);
-    position = printar2("capitulo3.txt", personagem, position);
+    position = printar2("folder/capitulo3.txt", personagem, position);
     printf("\n");
     printarMens(*personagem);
-    position = printar2("capitulo3.txt", personagem, position);
+    position = printar2("folder/capitulo3.txt", personagem, position);
     printf("\n");
     printarMens(*personagem);
-    position = printar2("capitulo3.txt", personagem, position);
+    position = printar2("folder/capitulo3.txt", personagem, position);
     printf("\nFaca sua escolha: ");
     while(1){
     scanf("%c", &escolha);
     getchar();
     if(escolha == 'a' || escolha == 'A'){
-        printar("cp3pt3opa.txt", personagem);
+        printar("folder/cp3pt3opa.txt", personagem);
         printf("\n");
         printarMens(*personagem);
-        personagem->capitulo++;
+        // personagem->capitulo++;
         break;
     }
     else if(escolha == 'b' || escolha == 'B'){
-        printar("cp3pt3opb.txt", personagem);
+        printar("folder/cp3pt3opb.txt", personagem);
         printf("\n");
         printarMens(*personagem);
-        personagem->capitulo++;
+        // personagem->capitulo++;
         break;
     }
     else{
@@ -623,6 +628,7 @@ int capitulo4(PERS *personagem, char arquivo[30])
     limparBufferTeclado();
     char file[50] = "capitulo4/";
     strcat(file, arquivo);
+    printf("abrindo arquivo");
     FILE *f = fopen(file, "r");
     char texto[1001];
     char escolha = 'Z';
@@ -645,12 +651,13 @@ int capitulo4(PERS *personagem, char arquivo[30])
             }
         }
     }
-    personagem->capitulo++;
+    // personagem->capitulo++;
     salvar(*personagem);
     return 1;
 }
 
 int capitulo5(PERS *personagem){
+    printf("chegou");
     salvar(*personagem);
     PERS vilao;
     vilao.forca = (rand()%4) + 1;
@@ -666,30 +673,30 @@ int capitulo5(PERS *personagem){
     int vivo = 0, temp;
     char escolha;
     long position = 0;
-    position = printar2("capitulo5.txt", personagem, position);
+    position = printar2("folder/capitulo5.txt", personagem, position);
     printarMens(*personagem);
-    position = printar2("capitulo5.txt", personagem, position);
+    position = printar2("folder/capitulo5.txt", personagem, position);
     printarMens(*personagem);
-    position = printar2("capitulo5.txt", personagem, position);
+    position = printar2("folder/capitulo5.txt", personagem, position);
     printarMens(*personagem);
     vivo = combater(personagem, &vilao);
     printf("\n");
-    position = printar2("capitulo5.txt", personagem, position);
+    position = printar2("folder/capitulo5.txt", personagem, position);
     printarMens(*personagem);
-    position = printar2("capitulo5.txt", personagem, position);
+    position = printar2("folder/capitulo5.txt", personagem, position);
     printarMens(*personagem);
-    position = printar2("capitulo5.txt", personagem, position);
+    position = printar2("folder/capitulo5.txt", personagem, position);
     printarMens(*personagem);
-    position = printar2("capitulo5.txt", personagem, position);
+    position = printar2("folder/capitulo5.txt", personagem, position);
     printf("\n");
     printf("\n");
-    printar("capitulo5esc.txt", personagem);
+    printar("folder/capitulo5esc.txt", personagem);
     printf("\nFaça sua escolha: ");
     while(1){
     scanf("%c", &escolha);
     getchar();
     if(escolha == 'A' || escolha == 'a'){
-        printar("capitulo5A.txt", personagem);
+        printar("folder/capitulo5A.txt", personagem);
         printf("\n\n");
         printf("Voce chegou ao fim do jogo, parabens\n");
         while(1){
@@ -702,7 +709,7 @@ int capitulo5(PERS *personagem){
         }
     }
     else if(escolha == 'B' || escolha == 'b'){
-        printar("capitulo5B.txt", personagem);
+        printar("folder/capitulo5B.txt", personagem);
         printf("\n\n");
         printf("Voce chegou ao fim do jogo, parabens\n");
         while(1){
@@ -715,7 +722,7 @@ int capitulo5(PERS *personagem){
         }
     }
     else if(escolha == 'C' || escolha == 'c'){
-        printar("capitulo5C.txt", personagem);
+        printar("folder/capitulo5C.txt", personagem);
         printf("\n\n");
         printf("Voce chegou ao fim do jogo, parabens\n");
         while(1){
@@ -753,7 +760,7 @@ int historia(PERS *personagem){
       return 1;
     }
     else if(cp == 2){
-      capitulo2(personagem);
+        capitulo2(personagem);
         return 1;
     }
     else if(cp == 3){
@@ -780,27 +787,34 @@ int main()
     char inicio1[200];
     int digito, teste = 1;
     inicializarAtaques();
-    inicio = fopen("C:\\vscodeC\\proj\\jogo\\teste.txt", "r");
-    while(fgets(inicio1, 199, inicio) != NULL){
-        printf("%s", inicio1);
-    }
-    fclose(inicio);
+    
     while(1){
+        inicio = fopen("teste.txt", "r");
+        while(fgets(inicio1, 199, inicio) != NULL){
+            printf("%s", inicio1);
+        }
+        fclose(inicio);
+        printf("\n");
         scanf("%d", &digito);
         getchar();
-        if(digito > 3 || digito < 1){
+        if(digito > 4 || digito < 1){
             printf("Por favor, insira um digito valido");
             continue;
+        } else if (digito == 4) {
+            printf("Feito por:\n");
+            printf("Joao Pedro Martinelli\n");
+            printf("Mario Junior\n");
+            printf("Matheus Constantino\n");
+        } else {
+            break;
         }
-        else
-        break;
     }
     PERS personagem;
     personagem = pegarDig(digito); // Verifica o digito de entrada
     while(teste){
-    teste = historia(&personagem);
+        teste = historia(&personagem);
+        personagem.capitulo++;
     }  
-
     
     return 0;
 }
