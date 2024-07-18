@@ -53,8 +53,8 @@ void inicializarAtaques() {
     }
 
     
-    strcpy(ataq1->nome, "bola de fogo");
-    strcpy(ataq2->nome, "bilada");
+    strcpy(ataq1->nome, "Bola de fogo");
+    strcpy(ataq2->nome, "Rensop");
     strcpy(ataq3->nome, "Corta relampago");
 
     ataq1->dano = 25;
