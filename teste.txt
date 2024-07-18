@@ -1,4 +1,7 @@
+=========================================================
 Seja bem-vindo ao jogo-livro, aqui vai umas instrucoes:
 Digite 1 caso queira criar um personagem;
-Digite 2 caso queira carregar um save pré-existente;
+Digite 2 caso queira carregar um save pre-existente;
 Digite 3 caso queira sair do jogo;
+Digite 4 para ver os creditos;
+=========================================================
