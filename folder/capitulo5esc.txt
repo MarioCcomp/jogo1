@@ -1,0 +1,5 @@
+A) Utilizar o artefato para reconstruir a cidade.
+
+B) Nao utlizar o artefato para reconstruir a cidade.
+
+C) Quebrar o artefato. +
