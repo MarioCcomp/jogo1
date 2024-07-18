@@ -3,7 +3,7 @@ Voce decide seguir o caminho escuro, confiando em sua intuicao.
 []: (decidido) "A mente segue as estrelas"... Talvez o desconhecido seja o caminho certo.
 A medida que avanca, a escuridao parece envolve-lo, mas voce sente que esta no caminho certo. De repente, voce ve um brilho fraco a frente.
 
-[]: (aliviado) Isso deve ser um bom sinal. Vou continuar.
+[]: (aliviado) Isso deve ser um bom sinal. Vou continuar. +
 
 Voce segue o brilho e chega a uma nova camara com um pedestal no centro. No pedestal, ha uma inscricao e uma chave antiga.
 Inscricao no Pedestal: "Somente a chave do conhecimento pode abrir a porta da sabedoria."
