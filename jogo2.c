@@ -460,7 +460,10 @@ int capitulo1(PERS *personagem){
 
         }
         else{
-            printf("morreu otario\n");
+            printf("\n\nVoce perdeu a batalha, tente novamente\n");
+            printarMens(*personagem);
+            personagem->vida = 100;
+            return capitulo1(personagem);
         }
         printarMens(*personagem);
         break;
