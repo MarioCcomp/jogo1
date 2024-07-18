@@ -657,7 +657,6 @@ int capitulo4(PERS *personagem, char arquivo[30])
 }
 
 int capitulo5(PERS *personagem){
-    printf("chegou");
     salvar(*personagem);
     PERS vilao;
     vilao.forca = (rand()%4) + 1;
